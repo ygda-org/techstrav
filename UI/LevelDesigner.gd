@@ -30,7 +30,7 @@ func _ready():
 	
 	
 func placeObject(pos):
-	if not selected == '':
+	if not selected == '' and not(selected == 'player' and len(Locations.players) != 0):
 		var object = sprites[selected]
 		var obj = object.instance()
 		obj.position = pos
