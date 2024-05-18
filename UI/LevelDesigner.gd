@@ -4,6 +4,8 @@ var selected = ''
 
 var sprites = {'ground' : preload("res://UI/Place/GroundSprite.tscn"), 'player': preload("res://UI/Place/PlayerSprite.tscn"), 'enemy': preload("res://UI/Place/EnemySprite.tscn"), 'platform' : preload("res://UI/Place/PlatformSprite.tscn"), 'goal' : preload('res://UI/Place/GoalSprite.tscn')}
 
+var addStack = []
+
 var mouse_button_pressed = false
 
 func _ready():
@@ -11,22 +13,27 @@ func _ready():
 		var object = sprites["ground"]
 		var obj = object.instance()
 		obj.position = l
-		add_child(obj)
+		$Placed.add_child(obj)
 	for l in Locations.players:
 		var object = sprites["player"]
 		var obj = object.instance()
 		obj.position = l
-		add_child(obj)
+		$Placed.add_child(obj)
 	for l in Locations.platforms:
 		var object = sprites["platform"]
 		var obj = object.instance()
 		obj.position = l
-		add_child(obj)
+		$Placed.add_child(obj)
 	for l in Locations.enemies:
 		var object = sprites["enemy"]
 		var obj = object.instance()
 		obj.position = l
-		add_child(obj)
+		$Placed.add_child(obj)
+	for l in Locations.goals:
+		var object = sprites["goal"]
+		var obj = object.instance()
+		obj.position = l
+		$Placed.add_child(obj)
 	
 	
 func placeObject(pos):
@@ -34,7 +41,8 @@ func placeObject(pos):
 		var object = sprites[selected]
 		var obj = object.instance()
 		obj.position = pos
-		add_child(obj)
+		$Placed.add_child(obj)
+		addStack.push_back(obj)
 		if selected == 'ground':
 			Locations.grounds.append(pos)
 		if selected == 'platform':
@@ -47,7 +55,7 @@ func placeObject(pos):
 			Locations.goals.append(pos)
 	
 func _input(event):
-	if event is InputEventMouseButton and event.position.y < 460 and not (event.position.x > 400 and event.position.x < 650 and event.position.y > 25 and event.position.y < 100):
+	if event is InputEventMouseButton and event.position.y < 460 and event.position.y > 80:
 		if event.is_pressed(): 
 			mouse_button_pressed = true
 		elif not event.is_pressed():
@@ -78,3 +86,32 @@ func _on_StartButton_pressed():
 
 func _on_GoalButton_pressed():
 	selected = 'goal'
+
+
+func _on_UndoButton_pressed():
+	if len(addStack) > 0:
+		if 'Ground' in addStack[-1].name:
+			Locations.grounds.pop_back()
+		if 'Player' in addStack[-1].name:
+			Locations.players.pop_back()
+		if 'Platform' in addStack[-1].name:
+			Locations.platforms.pop_back()
+		if 'Enemy' in addStack[-1].name:
+			Locations.enemies.pop_back()
+		if 'Goal' in addStack[-1].name:
+			Locations.goals.pop_back()
+		print(Locations.grounds)
+		addStack[-1].queue_free()
+		addStack.pop_back()
+
+		
+
+
+func _on_ResetButton_pressed():
+	Locations.grounds = []
+	Locations.platforms = []
+	Locations.goals = []
+	Locations.enemies = []
+	Locations.players = []
+	get_tree().change_scene("res://Enemies/BasicEnemy.tscn")
+	get_tree().change_scene("res://UI/LevelDesigner.tscn")

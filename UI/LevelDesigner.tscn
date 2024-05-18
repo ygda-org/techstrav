@@ -133,9 +133,29 @@ margin_bottom = 88.0
 custom_fonts/font = SubResource( 2 )
 text = "Start Game"
 
+[node name="UndoButton" type="Button" parent="."]
+margin_left = 52.0
+margin_top = 28.0
+margin_right = 187.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 2 )
+text = "Undo"
+
+[node name="ResetButton" type="Button" parent="."]
+margin_left = 815.0
+margin_top = 28.0
+margin_right = 950.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 2 )
+text = "Reset"
+
+[node name="Placed" type="Node" parent="."]
+
 [connection signal="pressed" from="Buttons/GroundButton" to="." method="_on_GroundButton_pressed"]
 [connection signal="pressed" from="Buttons/PlatformButton" to="." method="_on_PlatformButton_pressed"]
 [connection signal="pressed" from="Buttons/PlayerButton" to="." method="_on_PlayerButton_pressed"]
 [connection signal="pressed" from="Buttons/EnemyButton" to="." method="_on_EnemyButton_pressed"]
 [connection signal="pressed" from="Buttons/GoalButton" to="." method="_on_GoalButton_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="UndoButton" to="." method="_on_UndoButton_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
