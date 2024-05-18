@@ -9,7 +9,7 @@
 extents = Vector2( 539, 137 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 477 )
+extents = Vector2( 10, 1588.5 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 24
@@ -32,11 +32,11 @@ position = Vector2( 518, 596 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor"]
-position = Vector2( 0, 467 )
+position = Vector2( 0, -112.5 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor"]
-position = Vector2( 1028, 467 )
+position = Vector2( 1028, -65 )
 shape = SubResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
