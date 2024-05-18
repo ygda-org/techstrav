@@ -3,7 +3,7 @@ extends Node2D
 
 
 var ground = preload("res://Floors/Ground.tscn")
-var platform = preload("res://UI/Place/PlatformSprite.tscn")
+var platform = preload("res://Floors/Platform.tscn")
 var player = preload("res://Player.tscn")
 var enemy = preload("res://Enemies/BasicEnemy.tscn")
 var goal = preload("res://Goal.tscn")
