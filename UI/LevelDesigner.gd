@@ -47,14 +47,19 @@ func _process(delta):
 		$Highlight.visible = true
 		if selected == 'ground':
 			$Highlight.texture = load("res://Assets/programmer_assets/box.png")
+			$Highlight.scale.x = 1
 		if selected == 'platform':
 			$Highlight.texture = load("res://Assets/programmer_assets/platform.png")
+			$Highlight.scale.x = 2
 		if selected == 'player':
 			$Highlight.texture = load("res://Assets/programmer_assets/player.png")
+			$Highlight.scale.x = 1
 		if selected == 'enemy':
 			$Highlight.texture = load("res://Assets/programmer_assets/enemy.png")
+			$Highlight.scale.x = 1
 		if selected == 'goal':
 			$Highlight.texture = load("res://Assets/programmer_assets/goal.png")
+			$Highlight.scale.x = 1
 		$Highlight.global_position = get_viewport().get_mouse_position()
 	else:
 		#$Highlight.visible = false
