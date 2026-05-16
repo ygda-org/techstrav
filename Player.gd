@@ -15,9 +15,9 @@ func get_input():
 	if Input.is_action_pressed("walk_left"):
 		dir -= 1
 	if dir != 0:
-		velocity.x = lerp(velocity.x, dir * speed, acceleration)
+		velocity.x = dir * speed#lerp(velocity.x, dir * speed, acceleration)
 	else:
-		velocity.x = lerp(velocity.x, 0, friction)
+		velocity.x = 0#lerp(velocity.x, 0, friction)
 
 func _physics_process(delta):
 	get_input()
