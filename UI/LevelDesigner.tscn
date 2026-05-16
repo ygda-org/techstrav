@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Assets/blackSquare.jpeg" type="Texture" id=1]
 [ext_resource path="res://Assets/RedditSans-VariableFont_wght.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://Assets/circle.png" type="Texture" id=4]
-[ext_resource path="res://Assets/redTriangle.png" type="Texture" id=5]
+[ext_resource path="res://Assets/programmer_assets/platform.png" type="Texture" id=3]
+[ext_resource path="res://Assets/programmer_assets/player.png" type="Texture" id=4]
+[ext_resource path="res://Assets/programmer_assets/enemy.png" type="Texture" id=5]
 [ext_resource path="res://UI/LevelDesigner.gd" type="Script" id=6]
+[ext_resource path="res://Assets/programmer_assets/goal.png" type="Texture" id=7]
+[ext_resource path="res://Assets/programmer_assets/box.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
@@ -28,7 +29,8 @@ margin_top = 485.0
 margin_right = 406.0
 margin_bottom = 802.0
 rect_scale = Vector2( 0.2, 0.2 )
-texture_normal = ExtResource( 1 )
+texture_normal = ExtResource( 8 )
+expand = true
 
 [node name="GroundText" type="RichTextLabel" parent="Buttons"]
 margin_left = 39.0
@@ -43,12 +45,13 @@ text = "Ground"
 
 [node name="PlatformButton" type="TextureButton" parent="Buttons"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 291.0
-margin_top = 506.0
-margin_right = 355.0
-margin_bottom = 816.0
+margin_left = 288.0
+margin_top = 490.0
+margin_right = 352.0
+margin_bottom = 800.0
 rect_scale = Vector2( 2, 0.2 )
 texture_normal = ExtResource( 3 )
+expand = true
 
 [node name="PlatformText" type="RichTextLabel" parent="Buttons"]
 margin_left = 271.0
@@ -62,13 +65,13 @@ bbcode_text = "[center]Platform[/center]"
 text = "Platform"
 
 [node name="PlayerButton" type="TextureButton" parent="Buttons"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 544.0
-margin_top = 491.0
-margin_right = 1568.0
-margin_bottom = 1515.0
+margin_left = 524.0
+margin_top = 472.0
+margin_right = 2484.0
+margin_bottom = 2432.0
 rect_scale = Vector2( 0.05, 0.05 )
 texture_normal = ExtResource( 4 )
+expand = true
 
 [node name="PlayerText" type="RichTextLabel" parent="Buttons"]
 margin_left = 491.0
@@ -82,12 +85,13 @@ bbcode_text = "[center]Player[/center]"
 text = "Player"
 
 [node name="EnemyButton" type="TextureButton" parent="Buttons"]
-margin_left = 733.0
-margin_top = 491.0
-margin_right = 1885.0
-margin_bottom = 1515.0
+margin_left = 708.0
+margin_top = 475.0
+margin_right = 2823.0
+margin_bottom = 2355.0
 rect_scale = Vector2( 0.05, 0.05 )
 texture_normal = ExtResource( 5 )
+expand = true
 
 [node name="EnemyText" type="RichTextLabel" parent="Buttons"]
 margin_left = 681.0
@@ -101,13 +105,12 @@ bbcode_text = "[center]Enemy[/center]"
 text = "Enemy"
 
 [node name="GoalButton" type="TextureButton" parent="Buttons"]
-modulate = Color( 0.992157, 1, 0, 1 )
-margin_left = 928.0
-margin_top = 490.0
-margin_right = 2080.0
-margin_bottom = 1514.0
-rect_scale = Vector2( 0.025, 0.05 )
-texture_normal = ExtResource( 4 )
+margin_left = 907.0
+margin_top = 481.0
+margin_right = 978.0
+margin_bottom = 552.0
+texture_normal = ExtResource( 7 )
+expand = true
 
 [node name="GoalText" type="RichTextLabel" parent="Buttons"]
 margin_left = 861.0
@@ -122,8 +125,8 @@ text = "Goal"
 
 [node name="Divider" type="Sprite" parent="."]
 position = Vector2( 482, 462 )
-scale = Vector2( 4.03437, 0.0228705 )
-texture = ExtResource( 1 )
+scale = Vector2( 100, 0.5 )
+texture = ExtResource( 8 )
 
 [node name="StartButton" type="Button" parent="."]
 margin_left = 418.0

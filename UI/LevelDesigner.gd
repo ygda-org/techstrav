@@ -2,7 +2,13 @@ extends Control
 
 var selected = ''
 
-var sprites = {'ground' : preload("res://UI/Place/GroundSprite.tscn"), 'player': preload("res://UI/Place/PlayerSprite.tscn"), 'enemy': preload("res://UI/Place/EnemySprite.tscn"), 'platform' : preload("res://UI/Place/PlatformSprite.tscn"), 'goal' : preload('res://UI/Place/GoalSprite.tscn')}
+var sprites = {
+	'ground' : preload("res://UI/Place/GroundSprite.tscn"),
+	'player': preload("res://UI/Place/PlayerSprite.tscn"),
+	'enemy': preload("res://UI/Place/EnemySprite.tscn"),
+	'platform' : preload("res://UI/Place/PlatformSprite.tscn"),
+	'goal' : preload('res://UI/Place/GoalSprite.tscn')
+}
 
 var addStack = []
 

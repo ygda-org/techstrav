@@ -18,6 +18,16 @@ config/icon="res://icon.png"
 
 Locations="*res://locations.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[global]
+
+render=false
+window=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
