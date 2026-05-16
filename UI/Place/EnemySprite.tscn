@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/programmer_assets/enemy.png" type="Texture" id=1]
+[ext_resource path="res://UI/Place/EnemySprite.gd" type="Script" id=2]
 
 [node name="EnemySprite" type="Sprite"]
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 8.0
+margin_bottom = 8.0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

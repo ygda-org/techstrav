@@ -2,8 +2,8 @@ extends Node
 
 
 
-var grounds = []
-var platforms = []
-var players = []
-var enemies = []
-var goals = []
+var grounds := []
+var platforms := []
+var players := []
+var enemies := []
+var goals := []

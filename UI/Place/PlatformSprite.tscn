@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/programmer_assets/platform.png" type="Texture" id=1]
+[ext_resource path="res://UI/Place/PlatformSprite.gd" type="Script" id=2]
 
 [node name="PlatformSprite" type="Sprite"]
 scale = Vector2( 2, 1 )
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
