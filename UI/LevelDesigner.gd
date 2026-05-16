@@ -15,6 +15,7 @@ var addStack = []
 var mouse_button_pressed = false
 
 func _ready():
+	$Highlight.visible = false
 	for l in Locations.grounds:
 		var object = sprites["ground"]
 		var obj = object.instance()
@@ -40,8 +41,25 @@ func _ready():
 		var obj = object.instance()
 		obj.position = l
 		$Placed.add_child(obj)
-	
-	
+
+func _process(delta):
+	if selected != '':
+		$Highlight.visible = true
+		if selected == 'ground':
+			$Highlight.texture = load("res://Assets/programmer_assets/box.png")
+		if selected == 'platform':
+			$Highlight.texture = load("res://Assets/programmer_assets/platform.png")
+		if selected == 'player':
+			$Highlight.texture = load("res://Assets/programmer_assets/player.png")
+		if selected == 'enemy':
+			$Highlight.texture = load("res://Assets/programmer_assets/enemy.png")
+		if selected == 'goal':
+			$Highlight.texture = load("res://Assets/programmer_assets/goal.png")
+		$Highlight.global_position = get_viewport().get_mouse_position()
+	else:
+		#$Highlight.visible = false
+		$Highlight.position = Vector2(-100,-100)
+
 func placeObject(pos):
 	if not selected == '' and not(selected == 'player' and len(Locations.players) != 0):
 		var object = sprites[selected]

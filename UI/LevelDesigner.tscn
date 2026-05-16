@@ -155,6 +155,10 @@ text = "Reset"
 
 [node name="Placed" type="Node" parent="."]
 
+[node name="Highlight" type="Sprite" parent="."]
+position = Vector2( 399, 171 )
+texture = ExtResource( 5 )
+
 [connection signal="pressed" from="Buttons/GroundButton" to="." method="_on_GroundButton_pressed"]
 [connection signal="pressed" from="Buttons/PlatformButton" to="." method="_on_PlatformButton_pressed"]
 [connection signal="pressed" from="Buttons/PlayerButton" to="." method="_on_PlayerButton_pressed"]
