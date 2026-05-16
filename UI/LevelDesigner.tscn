@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/programmer_assets/box.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
-size = 28
+size = 30
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -26,9 +26,8 @@ script = ExtResource( 6 )
 [node name="GroundButton" type="TextureButton" parent="Buttons"]
 margin_left = 86.0
 margin_top = 485.0
-margin_right = 406.0
-margin_bottom = 802.0
-rect_scale = Vector2( 0.2, 0.2 )
+margin_right = 153.0
+margin_bottom = 551.0
 texture_normal = ExtResource( 8 )
 expand = true
 

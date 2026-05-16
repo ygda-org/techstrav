@@ -68,22 +68,48 @@ func _input(event):
 			mouse_button_pressed = false
 			placeObject(event.position)
 	
-
+func reset_modulation():
+	$Buttons/GroundButton.modulate = Color(1.0,1.0,1.0)
+	$Buttons/PlatformButton.modulate = Color(1.0,1.0,1.0)
+	$Buttons/PlayerButton.modulate = Color(1.0,1.0,1.0)
+	$Buttons/EnemyButton.modulate = Color(1.0,1.0,1.0)
+	$Buttons/GoalButton.modulate = Color(1.0,1.0,1.0)
 
 func _on_GroundButton_pressed():
-	selected = 'ground'
+	reset_modulation()
+	if selected != 'ground':
+		selected = 'ground'
+		$Buttons/GroundButton.modulate = Color(2.0,2.0,2.0)
+	else:
+		selected = ''
 
 
 func _on_PlatformButton_pressed():
-	selected = 'platform'
+	reset_modulation()
+	if selected != 'platform':
+		selected = 'platform'
+		$Buttons/PlatformButton.modulate = Color(2.0,2.0,2.0)
+	else:
+		selected = ''
+	
 
 
 func _on_PlayerButton_pressed():
-	selected = 'player'
+	reset_modulation()
+	if selected != 'player':
+		selected = 'player'
+		$Buttons/PlayerButton.modulate = Color(2.0,2.0,2.0)
+	else:
+		selected = ''
 
 
 func _on_EnemyButton_pressed():
-	selected = 'enemy'
+	reset_modulation()
+	if selected != 'enemy':
+		selected = 'enemy'
+		$Buttons/EnemyButton.modulate = Color(2.0,2.0,2.0)
+	else:
+		selected = ''
 
 
 func _on_StartButton_pressed():
@@ -91,7 +117,12 @@ func _on_StartButton_pressed():
 
 
 func _on_GoalButton_pressed():
-	selected = 'goal'
+	reset_modulation()
+	if selected != 'goal':
+		selected = 'goal'
+		$Buttons/GoalButton.modulate = Color(2.0,2.0,2.0)
+	else:
+		selected = ''
 
 
 func _on_UndoButton_pressed():
