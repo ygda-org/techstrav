@@ -9,7 +9,9 @@ texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -16.0
+margin_top = -2.0
+margin_right = 16.0
+margin_bottom = 2.0
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
