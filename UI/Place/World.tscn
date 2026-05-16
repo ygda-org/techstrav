@@ -49,6 +49,7 @@ expand = true
 stretch_mode = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
 
 [node name="BackButton" type="TextureButton" parent="CanvasLayer"]
 margin_left = 34.0

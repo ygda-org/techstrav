@@ -8,6 +8,9 @@ var player = preload("res://Player.tscn")
 var enemy = preload("res://Enemies/BasicEnemy.tscn")
 var goal = preload("res://Goal.tscn")
 
+func _process(delta):
+	if Input.is_action_just_pressed("quit"):
+		_on_BackButton_pressed()
 
 func _ready():
 	for l in Locations.grounds:
